@@ -160,4 +160,5 @@ def team_colors(team)
     if data[:team_name] == team
       return data[:colors]
     end
+    end
 end
