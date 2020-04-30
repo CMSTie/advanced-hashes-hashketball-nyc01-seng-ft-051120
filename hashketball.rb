@@ -184,3 +184,12 @@ def player_numbers(desired_team_name)
   end
   return numbers
 end
+
+def player_stats(desired_player_name)
+  game_hash.each do |location, team_data|
+    team_data.each do |stats|
+      if stats[:player_name] == desired_player_name then
+        return stats[:player_name]
+      end
+    end
+end
