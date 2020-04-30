@@ -129,8 +129,8 @@ end
 def num_points_scored(player_name)
   game_hash.each do |key, value|
     value.each do |new_value, stats|
-      stats.each do |score|
-        score[player_name]
+      stats.each do |points|
+        points[player_name]
       end
     end
   end
