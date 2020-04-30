@@ -192,11 +192,11 @@ def player_stats(desired_player_name)
       if stats == :players then
         stats.each do |player|
         if player[:player_name] == desired_player_name then
-        player_hash = player[:player_name]
+        player_hash = player
       end
     end
     end
   end
   end
-  
+  player_hash
 end
