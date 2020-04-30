@@ -192,8 +192,7 @@ def player_stats(desired_player_name)
       next unless stats == :players
         game_hash[location][stats].each do |player|
         next unless player[:player_name] == desired_player_name
-        player_hash = player.delete_if do |key, value|
-          key == :player_name
+        player_hash = player[:player_name]
       end
     end
   end
