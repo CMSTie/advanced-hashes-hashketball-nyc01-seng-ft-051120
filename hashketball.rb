@@ -175,11 +175,10 @@ def player_numbers(desired_team_name)
     if team_data[:team_name] == desired_team_name then
       team_data.each do |stats, value|
       if stats = :player then
-        value.each do |points|
+        value.each do |player_data|
         points.push(:points)
       end
     end
   end
-end
   return points
 end
