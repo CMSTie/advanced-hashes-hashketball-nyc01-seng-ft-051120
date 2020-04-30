@@ -127,9 +127,9 @@ def game_hash
 end
 
 def num_points_scored(player_name)
-  game_hash.tap do |key, value|
-    value.tap do |new_value, stats|
-      stats.tap do |new_value2, points|
+  game_hash.each do |location, team_data|
+    team_data.each do |new_value, stats|
+      stats.each do |points|
         points[player_name]
       end
     end
