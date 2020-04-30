@@ -189,7 +189,7 @@ def player_stats(desired_player_name)
   game_hash.each do |location, team_data|
     team_data.each do |stats, value_2|
       next unless stats == :players
-        game_hash[location][stats].each do |player|
+        stats.each do |player|
         next unless player[:player_name] == desired_player_name
         return player
       end
@@ -200,5 +200,7 @@ end
 def big_shoe_rebounds()
   player_big_shoe = 0 
   player_rebound = 0 
-  
+  game_hash.each do |location, team_data|
+    team_data.each do |stats, data|
+      next unless stats = :player 
 end
