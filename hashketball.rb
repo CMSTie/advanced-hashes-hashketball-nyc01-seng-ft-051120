@@ -194,9 +194,6 @@ def player_stats(desired_player_name)
         next unless player[:player_name] == desired_player_name
         player_hash = player[:player_name]
       end
-      end
-    end
-  end
   end
 end
   player_hash
