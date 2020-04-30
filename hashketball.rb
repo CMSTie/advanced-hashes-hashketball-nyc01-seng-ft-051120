@@ -189,14 +189,12 @@ def player_stats(desired_player_name)
   player_hash = {}
   game_hash.each do |location, team_data|
     team_data.each do |stats, value_2|
-      if stats == :players then
+      next unless stats == :players
         game_hash[location][stats].each do |player|
-        if player[:player_name] == desired_player_name then
+        next unless player[:player_name] == desired_player_name
         player_hash = player.delete_if do |key, value|
           key == :player_name
       end
-    end
-    end
     end
   end
 end
