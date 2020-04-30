@@ -165,4 +165,5 @@ end
 def team_names()
   game_hash.each do |location|
     return location[:team_name]
+  end
 end
