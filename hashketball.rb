@@ -186,15 +186,13 @@ def player_numbers(desired_team_name)
 end
 
 def player_stats(desired_player_name)
-  player_hash = {}
   game_hash.collect do |location, team_data|
     team_data.each do |stats, value_2|
       next unless stats == :players
         game_hash[location][stats].each do |player|
         next unless player[:player_name] == desired_player_name
-        player_hash = player
+        return player
       end
   end
 end
-  player_hash
 end
