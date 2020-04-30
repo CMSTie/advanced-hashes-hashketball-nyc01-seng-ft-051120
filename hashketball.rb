@@ -168,3 +168,15 @@ def team_names()
   teams.push(game_hash[:home][:team_name])
   return teams
 end
+
+def player_numbers(desired_team_name)
+  points = []
+  game_hash.each do |location, team_data|
+    if team_data[:team_name] == desired_team_name then
+      team_data.each do |stats|
+      if stats[:player] = :points then
+        points.push(:points)
+      end
+    end
+  end
+end
