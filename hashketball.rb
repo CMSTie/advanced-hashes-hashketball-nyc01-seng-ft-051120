@@ -189,8 +189,9 @@ def player_stats(desired_player_name)
   player_hash = {}
   game_hash.each do |location, team_data|
     team_data.each do |stats|
-      if stats == :players
-        desired_player_name then
+      if stats == :players then
+        stats.each do |player|
+        if player == desired_player_name then
         player_hash[:player] = stats[:player_name]
       end
     end
