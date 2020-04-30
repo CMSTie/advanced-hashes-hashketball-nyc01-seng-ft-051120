@@ -178,5 +178,5 @@ def player_numbers(desired_team_name)
         points.push(:points)
       end
     end
-  end
+  return points
 end
