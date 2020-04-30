@@ -192,4 +192,5 @@ def player_stats(desired_player_name)
         return stats[:player_name]
       end
     end
+  end
 end
