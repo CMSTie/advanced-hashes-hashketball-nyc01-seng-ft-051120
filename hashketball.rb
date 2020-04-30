@@ -170,7 +170,7 @@ def team_names()
 end
 
 def player_numbers(desired_team_name)
-  points = []
+  numbers = []
   game_hash.each do |location, team_data|
     if team_data[:team_name] == desired_team_name then
       team_data.each do |stats, value|
@@ -182,5 +182,5 @@ def player_numbers(desired_team_name)
       end
     end
   end
-  return points
+  return numbers
 end
