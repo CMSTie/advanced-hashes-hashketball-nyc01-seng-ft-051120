@@ -128,8 +128,8 @@ end
 
 def num_points_scored(player_name)
   game_hash.tap do |key, value|
-    value.map do |new_value, stats|
-      stats.map do |points|
+    value.tap do |new_value, stats|
+      stats.tap do |points|
         points[player_name]
       end
     end
