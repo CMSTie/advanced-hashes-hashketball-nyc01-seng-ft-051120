@@ -178,8 +178,8 @@ def player_numbers(desired_team_name)
         value.each do |player_data|
         points.push(:points)
       end
+      end
     end
   end
   return points
-end
 end
