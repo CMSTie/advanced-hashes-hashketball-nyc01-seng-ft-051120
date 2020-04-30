@@ -174,7 +174,7 @@ def player_numbers(desired_team_name)
   game_hash.each do |location, team_data|
     if team_data[:team_name] == desired_team_name then
       team_data.each do |stats, value|
-      if stats = :players then
+      if stats == :players then
         value.each do |player_data|
         points.push(player_data[:number])
       end
