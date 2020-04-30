@@ -126,4 +126,87 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(find_player_name)
+  game_hash.each do |location, team_data|
+    team_data.each do |new_value, stats|
+      if new_value == :players then
+      stats.each do |player|
+        if player[:player_name] == find_player_name then
+        return player[:points]
+      end
+      end
+      end
+    end
+  end
+end
+
+def shoe_size(find_player_name)
+  game_hash.each do |location, team_data|
+    team_data.each do |new_value, stats|
+      if new_value == :players then
+      stats.each do |player|
+        if player[:player_name] == find_player_name then
+        return player[:shoe]
+      end
+      end
+      end
+    end
+  end
+end
+
+def team_colors(team)
+  game_hash.each do |location, team_data|
+    if team_data[:team_name] == team
+      return team_data[:colors]
+    end
+    end
+end
+
+def team_names()
+  teams = []
+  teams.push(game_hash[:away][:team_name])
+  teams.push(game_hash[:home][:team_name])
+  return teams
+end
+
+def player_numbers(desired_team_name)
+  numbers = []
+  game_hash.each do |location, team_data|
+    if team_data[:team_name] == desired_team_name then
+      team_data.each do |stats, value|
+      if stats == :players then
+        value.each do |player_data|
+        numbers.push(player_data[:number])
+      end
+      end
+      end
+    end
+  end
+  return numbers
+end
+
+def player_stats(desired_player_name)
+  game_hash.each do |location, team_data|
+    team_data.each do |stats, value_2|
+      next unless stats == :players
+        game_hash[location][stats].each do |player|
+        next unless player[:player_name] == desired_player_name
+        return player
+      end
+  end
+end
+end
+
+def big_shoe_rebounds()
+  player_big_shoe = 0 
+  player_rebound = 0 
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |player|
+      if player[:shoe] > player_big_shoe
+        player_big_shoe = player[:shoe]
+        player_rebound = player[:rebounds]
+      end
+end
+end
+return player_rebound
+end
