@@ -160,5 +160,4 @@ def team_colors(team)
       return data[:colors]
     end
     end
-    end
 end
