@@ -186,7 +186,7 @@ def player_numbers(desired_team_name)
 end
 
 def player_stats(desired_player_name)
-  game_hash.collect do |location, team_data|
+  game_hash.each do |location, team_data|
     team_data.each do |stats, value_2|
       next unless stats == :players
         game_hash[location][stats].each do |player|
@@ -195,4 +195,10 @@ def player_stats(desired_player_name)
       end
   end
 end
+end
+
+def big_shoe_rebounds()
+  player_big_shoe = 0 
+  player_rebound = 0 
+  
 end
